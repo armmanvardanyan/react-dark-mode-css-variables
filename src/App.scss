@@ -1,0 +1,63 @@
+$primary: rgb(207, 78, 121);
+$primary_dark: #d23669;
+
+$text_color: black;
+$text_color_dark: #fff;
+
+$header_color: black;
+$header_color_dark: #fff;
+
+$bg_color: #fff;
+$bg_color_dark: gray;
+
+
+
+.light-theme {
+  --primary: #{$primary};
+  --text_color: #{$text_color};
+  --header_color: #{$header_color};
+  --bg_color: #{$bg_color};
+}
+
+.dark-theme {
+  --primary: #{$primary_dark};
+  --text_color: #{$text_color_dark};
+  --header_color: #{$header_color_dark};
+  --bg_color: #{$bg_color_dark};
+};
+
+
+
+
+body {
+  background-color: var(--bg_color);
+}
+
+.App {
+  max-width: 30%;
+  margin: 0 auto;
+  position: relative;
+}
+
+
+
+h1 {
+  text-align: center;
+  font-size: 50px;
+  color: var(--header_color);
+}
+
+.post {
+  box-shadow: 0 0 0 2px rgba(#000, .1);
+  margin-bottom: 50px;
+  padding: 15px;
+
+  h2 {
+    color: var(--primary);
+    font-weight: bold;
+  }
+
+  p {
+    color: var(--text_color)
+  }
+}
