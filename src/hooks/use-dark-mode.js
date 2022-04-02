@@ -6,7 +6,7 @@ import useLocalStorage from "./use-localstorage";
 function useDarkMode() {
     // Use our useLocalStorage hook to persist state through a page refresh.
     // Read the recipe for this hook to learn more: usehooks.com/useLocalStorage
-    const [enabledState, setEnabledState] = useLocalStorage("theme");
+    const [enabledState, setEnabledState] = useLocalStorage("theme",'');
     // See if user has set a browser or OS preference for dark mode.
     // The usePrefersDarkMode hook composes a useMedia hook (see code below).
     // If enabledState is defined use it, otherwise fallback to prefersDarkMode.
