@@ -1,13 +1,16 @@
 import { useEffect, useState } from 'react';
 import './App.scss';
+import useDarkMode from './hooks/use-dark-mode';
 import SwitchBtn from './Ui/SwitchBtn';
 
 function App() {
 
+
+  const [enabledState, setEnabled] = useDarkMode();
+
   const [posts, setPosts] = useState(null);
   const [loading, setLoading] = useState(false)
 
-  const [theme, setTheme] = useState('light-theme')
 
 
   const fetchData = () => {
@@ -27,13 +30,13 @@ function App() {
     fetchData()
   }, [])
 
-  useEffect(() => {
-    document.documentElement.className = theme;
-  }, [theme])
-
   const switchTheme = e => {
-    setTheme(e.target.checked ? 'dark-theme' : 'light-theme');
+    setEnabled(e.target.checked ? 'dark-theme' : '')
   }
+
+  useEffect(() => {
+    document.documentElement.className = enabledState;
+  }, [enabledState])
 
 
   let result = null;
@@ -56,7 +59,7 @@ function App() {
   return (
     <div className="App">
       <h1>Posts</h1>
-      <SwitchBtn switchTheme={switchTheme} />
+      <SwitchBtn switchTheme={ switchTheme } checked={ enabledState && 'checked' } />
       {result}
     </div>
   );

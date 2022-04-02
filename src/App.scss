@@ -12,12 +12,7 @@ $bg_color_dark: gray;
 
 
 
-.light-theme {
-  --primary: #{$primary};
-  --text_color: #{$text_color};
-  --header_color: #{$header_color};
-  --bg_color: #{$bg_color};
-}
+
 
 .dark-theme {
   --primary: #{$primary_dark};
